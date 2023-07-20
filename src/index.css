@@ -1,20 +1,190 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+      @font-face {
+          font-family: "Poppins', sans-serif";
+          src: url("https: //fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+        }
+      
+        @font-face {
+          font-family: "Montserrat', sans-serif";
+          src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        };
+--primary_text: Poppins, sans-serif;
+--secondary_text: Montserrat, sans-serif;
+--third_text: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  
+  
+  --mainText_color: #000000;
+  --secondary_color: #FAFAFA;
+  --thirdText_color: #808080;
+  --main_bg: #FFFFFF;
+  --secondary_bg: #DB4444;
+  --accent_color: #00A6DB;
+  --hero_bg: rgb(219, 208, 204, 80%);
+  --unactive: #C1C1C1;
+  --hero_color: #A86A3D;
+  --hero_subcolor: #323334;
+  --dotArrow_color:#F5F5F5;
+  --dotTime_color: #E07575;
+  --star_bg: #FFAD33;
+  --circle_bg: #d9d9d9;
+  --arrow_color: #7d7d7d;
+  --title_color: #2F3233;
+  --footer_bg: #181818;
+  --line_color: #c0c0c0;
+  
+
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  font-family: var(--primary_text);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+      max-width: 1440px;
 }
 
-a {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -66,4 +236,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
