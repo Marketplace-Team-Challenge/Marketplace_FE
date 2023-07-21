@@ -1,0 +1,56 @@
+.wrapper{
+    width: 270px;
+    height: auto;
+    position: relative;
+    font-family: var(--primary_text);
+    font-size: 16px;
+    line-height: 1.5;
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+}
+.imgCard{
+    display: block;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+.imgTitle{
+    margin-bottom: 8px;
+
+}
+
+.imgPrice{
+    margin-bottom: 8px;
+    color:  var(--second_accent);
+}
+.imgPrice>span{
+    color: var(--thirdText_color);
+    margin-left: 8px;
+}
+
+.starWrapper{
+    display: flex;
+    gap: 10px;
+}
+.starList{
+    display: flex;
+}
+
+.starTotal{
+margin-left: 8px;
+color: var(--thirdText_color);
+}
+
+.discount{
+    display: block;
+    position: absolute;
+    top:10px;
+    left: 10px;
+    background-color: var(--second_accent);
+    color: var(--main_bg);
+    font-weight: 400;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
