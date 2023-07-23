@@ -1,17 +1,19 @@
 :root {
-
       @font-face {
           font-family: "Poppins', sans-serif";
           src: url("https: //fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-        }
-      
-        @font-face {
-          font-family: "Montserrat', sans-serif";
+        
+        font-family: "Montserrat', sans-serif";
           src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        font-family: 'Roboto', sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
         };
+      
+    
 --primary_text: Poppins, sans-serif;
 --secondary_text: Montserrat, sans-serif;
---third_text: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+--third_text: Roboto, sans-serif;
 
   
   
