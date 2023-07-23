@@ -35,10 +35,17 @@
 }
 .starList{
     display: flex;
+    align-items: center;
+    padding: 0;
+    /* margin-bottom: 10px; */
+    }
+.starListItem{
+    display: inline-flex;
+align-items: center;
 }
 
 .starTotal{
-margin-left: 8px;
+/* margin-left: 8px; */
 color: var(--thirdText_color);
 }
 
@@ -53,4 +60,15 @@ color: var(--thirdText_color);
     font-size: 12px;
     border-radius: 4px;
     padding: 5px 10px;
+}
+.like{
+    position: absolute;
+        top: 12px;
+        right: 12px;
+}
+
+.seeMore{
+    position: absolute;
+    top: 54px;
+    right: 12px;
 }
