@@ -1,0 +1,19 @@
+.button[type="submit"] {
+    background-color: var(--accent_color);
+    font-family: var(--primary_text);
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: .9s ease;
+    margin: 4px
+}
+
+.button[type="submit"]:hover {
+    transform: scale(1.05);
+    color: rgb(255, 255, 255);
+    /* background-color: var(--title_color); */
+}

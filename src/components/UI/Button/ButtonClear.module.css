@@ -1,0 +1,14 @@
+.btn{
+    border-radius: 32px;
+    padding: 12px 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: transparent;
+    border: 1px solid var(--main_bg);
+    color: var(--main_bg);
+    transition: .9s ease;
+}
+.btn:hover{
+    transform: scale(1.05);
+    backdrop-filter: blur(2px);
+}

@@ -24,8 +24,10 @@
    --second_accent: #DB4444;
   --secondary_color: #FAFAFA;
   --thirdText_color: #808080;
+
   --subText: #161616;
   --inactive_color: #C1C1C1;
+  
   --hero_bg: rgba(219, 208, 204, 80%);
   --layout_bg: rgba(0, 0, 0, 40%);
 --footer_bg: #222222;
@@ -43,6 +45,10 @@
   -webkit-text-size-adjust: 100%;
 
       max-width: 1440px;
+}
+
+body{
+  background-color: var(--secondary_color);
 }
 
 html,

@@ -22,18 +22,24 @@
 .cardTitle{
     font-weight: bold;
     font-size: 28px;
+    margin-bottom: 4px;
 }
 .cardPrice{
         font-weight: bold;
         font-size: 28px;
+        margin-bottom: 4px;
+        color: var(--main_bg);
     }
 .cardSubPrice{
         font-weight: 400;
             font-size: 16px;
             text-decoration: line-through;
+           
+            
 }
 .cardDescription{
     font-family: var(--third_text);
         font-weight: 300;
             font-size: 16px;
+            margin-bottom: 24px;
 }
