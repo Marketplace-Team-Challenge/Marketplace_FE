@@ -9,16 +9,35 @@ const formData = [
     placeholder: "Enter your First name"
   },
   {
+    label: "Last name",
+    name: "surname",
+    type: "text",
+    placeholder: "Enter your Last name"
+  },
+  {
     label: "Country/region fo residence",
     name: "residence",
     type: "text",
     placeholder: "Enter your country of residence"
   },
+    {
+    label: "Title",
+    name: "title",
+    type: "text",
+    placeholder: "Enter your title"
+  },
   {
     label: "Country/region code",
     name: "code",
-    type: "text",
+    type: "number",
     placeholder: "Enter your region code"
+  },
+   {
+    label: "Phone number",
+    name: "phone",
+    type: "tel",
+     placeholder: "Ukraine (+380)",
+     
   },
   {
     label: "Date of birth",
@@ -26,30 +45,15 @@ const formData = [
     type: "date",
     placeholder: "Enter your birthday"
   },
-{
-    label: "Last name",
-    name: "surname",
-    type: "text",
-    placeholder: "Enter your Last name"
-  },
+
+ 
   {
-    label: "Last name",
-    name: "surname",
-    type: "text",
-    placeholder: "Enter your Last name"
+    label: "Email",
+    name: "email",
+    type: "email",
+    placeholder: "Enter your email"
   },
-  {
-    label: "Last name",
-    name: "surname",
-    type: "text",
-    placeholder: "Enter your Last name"
-  },
-  {
-    label: "Last name",
-    name: "surname",
-    type: "text",
-    placeholder: "Enter your Last name"
-  }
+
 ]
 export const Form = () => {
     return (
