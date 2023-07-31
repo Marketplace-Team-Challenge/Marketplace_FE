@@ -44,11 +44,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-      max-width: 1440px;
+      
 }
 
 body{
   background-color: var(--secondary_color);
+  max-width: 1440px;
 }
 
 html,
@@ -160,6 +161,7 @@ html {
 
 body {
   line-height: 1;
+ 
 }
 
 ol,
