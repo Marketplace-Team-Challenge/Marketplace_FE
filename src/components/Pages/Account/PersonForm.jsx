@@ -1,5 +1,7 @@
-import { ButtonMain } from "../../UI/Button/ButtonMain"
+import { useState } from "react";
+// import { ButtonMain } from "../../UI/Button/ButtonMain"
 import css from "./PersonForm.module.css"
+import ButtonMain from "../../UI/Button/ButtonMain";
 
 const formData = [
   {
@@ -56,19 +58,38 @@ const formData = [
 
 ]
 export const Form = () => {
+  const [formValues, setFormValues] = useState({});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('formData', JSON.stringify(formValues));
+    setFormValues({});
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
+  };
+
     return (
-      <form className={css.form}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <div className={css.form_wrapper}>
-          {formData.map((data) => {
+          {formData.map((data, index) => {
                     return(      
-                        <div className={css.form_group} key={data.index}>
+                        <div className={css.form_group} key={index}>
                         <label htmlFor={data.name}>{ data.label}</label>
-                        <input required="" placeholder={data.placeholder} name={data.name} id={data.name} type={ data.type} />
+                        <input
+                          required
+                          placeholder={data.placeholder}
+                          name={data.name}
+                          id={data.name}
+                          type={data.type} 
+                          value={formValues[data.name] || ''}
+                          onChange={handleChange}
+                          />
         </div>
                     )
                 })}
         </div>
-        <ButtonMain/>
+        <ButtonMain type="submit">Save</ButtonMain>
       </form>
     )
 }

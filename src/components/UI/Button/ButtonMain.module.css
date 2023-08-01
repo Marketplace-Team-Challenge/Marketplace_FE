@@ -1,4 +1,4 @@
-.button[type="submit"] {
+.button {
     background-color: var(--accent_color);
     font-family: var(--primary_text);
     font-weight: 600;
@@ -12,7 +12,7 @@
     margin: 4px
 }
 
-.button[type="submit"]:hover {
+.button:hover {
     transform: scale(1.05);
     color: rgb(255, 255, 255);
     /* background-color: var(--title_color); */
