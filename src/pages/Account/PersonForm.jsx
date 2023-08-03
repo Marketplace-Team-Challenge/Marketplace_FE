@@ -1,6 +1,7 @@
 import { useState } from "react";
 import css from "./PersonForm.module.css"
 import { ButtonMain } from "../../components/UI/common/ButtonComponent/ButtonMain";
+import { InputMain } from "../../components/UI/common/InputComponent/InputMain";
 
 
 const formData = [
@@ -76,7 +77,7 @@ export const Form = () => {
                     return(      
                         <div className={css.form_group} key={index}>
                         <label htmlFor={data.name}>{ data.label}</label>
-                        <input
+                        <InputMain
                           required
                           placeholder={data.placeholder}
                           name={data.name}
