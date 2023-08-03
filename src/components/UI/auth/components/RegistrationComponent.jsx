@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'; //added by Taras
 import { authInputStyle, iconStyleAuthEmail, iconStyleAuthName } from '../../../../../constants/Styles';
 import { authPlaceholderName, inputTypeText, authPlaceholderEmail, authPlaceholderPassword, buttonTypeSubmit, buttonNameAuthRegisr} from '../../../../../constants/Values';
 import { useTogglePassword } from '../../../../../customHooks/customHooks';
@@ -7,7 +8,10 @@ import css from './RegistrationComponent.module.css';
 
 export const RegistrationComponent = () => {
   const {typePassword, iconStyleAuthPassword, togglePassInput} = useTogglePassword();
-
+    const navigate = useNavigate();  //added by Taras
+    const enterProfile = () => {
+        navigate("/profile");//added by Taras
+    }
   const authButtonStyle = {
     width: "324px",
     height: "48px",
@@ -17,7 +21,7 @@ export const RegistrationComponent = () => {
 
     return(
         <>
-         <form className={css.form}>
+            <form className={css.form} onSubmit={(e) => { e.preventDefault(); enterProfile(); }}>  
                     <div className={css.authIconBox} style={{ marginBottom: '20px'}}>
                         <InputMain placeholder={authPlaceholderName} type={inputTypeText} style={authInputStyle}
                         showLabel={false} />
@@ -33,7 +37,8 @@ export const RegistrationComponent = () => {
                         showLabel={false} />
                         <span style={iconStyleAuthPassword} onClick={() => togglePassInput()}></span>
                     </div>
-                    <ButtonMain type={buttonTypeSubmit} buttonName={buttonNameAuthRegisr} style={authButtonStyle} />
+                <ButtonMain type={buttonTypeSubmit} buttonName={buttonNameAuthRegisr} style={authButtonStyle} 
+                    />
                 </form>
         </>
     );
