@@ -1,0 +1,12 @@
+button {
+    background-color: var(--button_bg);
+    border-radius: 24px;
+    border: none;
+    font-family: var(--primary_text);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 2%;
+    color: var(--button_color);
+    cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.choiceLoginMethodContainer {
+    display: flex;
+    flex-direction: row;
+}
+.choiceLoginMethodContainer {
+    justify-content: center;
+    align-items: center;
+    width: 324px;
+    height: 36px;
+}
+.loginMethodEmailBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 162px;
+    height: inherit;
+    cursor: pointer;
+}
+.choiceLoginMethodEmail {
+    font-weight: 600;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 228px;
+    margin-top: 34px;
+}
+.form > div > div {
+    text-align: center;
+  }
+.authIconBox {
+    position: relative;
+}
+/* .authIconBoxPhone {
+    justify-content: space-between;
+} */

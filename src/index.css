@@ -15,8 +15,7 @@
 --secondary_text: Montserrat, sans-serif;
 --third_text: Roboto, sans-serif;
 
-  
-  
+
   --mainText_color: #000000;
   --main_bg: #FFFFFF;
    --accent_color: #00A6DB;
@@ -30,6 +29,13 @@
   --layout_bg: rgba(0, 0, 0, 40%);
 --footer_bg: #222222;
 --mainFooter_bg: #323334;
+--auth_color: rgba(22, 22, 22, 1);
+--input_border_color: rgba(193, 193, 193, 1);
+--button_bg: rgba(0, 166, 219, 1);
+--button_color: #FFFFFF;
+--text_btn_color: rgba(47, 50, 51, 1);
+
+
 
 
   line-height: 1.5;

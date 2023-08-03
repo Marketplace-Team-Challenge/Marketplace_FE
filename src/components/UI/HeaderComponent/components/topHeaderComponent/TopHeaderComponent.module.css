@@ -1,0 +1,59 @@
+.topHeaderTitle, .topHeaderLinkContainer, .topHeaderCommonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.topHeaderCommonWrapper {
+    height: 48px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+.topHeaderWrapperBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 33px;
+    width: 1168px;
+}
+.topHeaderTitleBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 48px;
+}
+.topHeaderTitleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-self: center;
+    width: 550px;
+    height: 24px;
+}
+.topHeaderTitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 1);
+}
+.topHeaderLinkContainer {
+    width: 68px;
+    height: 24px;
+}
+.topHeaderLink {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+}
+.languageSection {
+    height: 24px;
+    width: 78px;
+}
+.topHeaderTitleLanguageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 859px;
+    height: 24px;
+}

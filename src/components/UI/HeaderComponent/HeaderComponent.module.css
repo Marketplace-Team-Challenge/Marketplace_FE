@@ -1,0 +1,6 @@
+.headerComponent {
+    display: flex;
+    flex-direction: column;
+    height: 96px;
+    width: 100%;
+}

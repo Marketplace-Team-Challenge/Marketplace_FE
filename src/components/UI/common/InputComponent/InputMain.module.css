@@ -1,0 +1,11 @@
+input {
+    padding: 14px 16px 14px 16px;
+    box-sizing:border-box;
+    border: 1px solid var(--input_border_color);
+    border-radius: 24px;
+    font-family: var(--primary_text);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--auth_color);
+}
