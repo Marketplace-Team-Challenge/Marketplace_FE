@@ -22,16 +22,59 @@
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 228px;
-    margin-top: 34px;
+    height: 212px;
+    margin-top: 28px;
 }
 .form > div > div {
     text-align: center;
   }
-.authIconBox {
-    position: relative;
-}
-/* .authIconBoxPhone {
+.inputLoginWrapper {
+    height: 113px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-} */
+}
+form input:first-child {
+    width: 324px;
+    height: 44px;
+}
+.error {
+    height: 14px;
+    width: 200px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: end;
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 14px;
+    color: rgba(229, 57, 53, 1)
+}
+.form button:last-of-type {
+    margin-top: 24px;
+    width: 324px;
+    height: 48px;
+    padding: 12px 0px;
+}
+.authLinkForgotPassword {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 8px;
+    width: 136px;
+    height: 19px;
+    font-family: var(--secondary_text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-decoration: none;
+    color: var(--button_bg);
+}
+.form input {
+    outline: none;
+}
+
+
+
+
+
+

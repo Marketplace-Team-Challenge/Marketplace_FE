@@ -2,14 +2,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import css from "./AuthComponent.module.css";
 import PropTypes from 'prop-types';
-import { facebookColorIcon, googleColorIcon, appleBlackIcon, closeIcon } from "../../../../constants/Icons";
+import { facebookColorIcon, googleColorIcon, appleBlackIcon, closeIcon } from "../../../constants/Icons";
 
 export const AuthComponent = ({authTitle, authText, authLineText, childComponent}) => {
-      const logInLinkStyle = {
-        textDecoration: 'underline',
-        fontWeight: '600',
-        lineHeight: '24px',
-      }
+    //   const logInLinkStyle = {
+    //     textDecoration: 'underline',
+    //     fontWeight: '600',
+    //     lineHeight: '24px',
+    //   }
       
     const navigate = useNavigate();
     return (
@@ -51,10 +51,16 @@ export const AuthComponent = ({authTitle, authText, authLineText, childComponent
                 <a className={css.authPrivacyPolicyLink} href="/terms-of-service">Terms of Service</a> and{" "}
                 <a className={css.authPrivacyPolicyLink} href="/privacy-policy">Privacy Policy</a>.
                 </div>
-                <div>
+                <div className={css.authLineBox}>
                 <hr className={css.authLine} />
                 </div>
-               <div className={css.haveAccountLogIn}>Already have an account? <Link className={css.authPrivacyPolicyLink} style={logInLinkStyle}>Log in</Link></div>
+                {
+                    authTitle === "Sign up" && (
+                        <div className={css.haveAccountLogIn}>Already have an account? <Link className={css.authLinkLogIn} to={"/login"}>Log in</Link></div>
+
+                    )
+                }
+               
                </div>
             </div>
         </div>

@@ -1,8 +1,45 @@
 .form {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin-top: 28px;
+    height: 253px;
 }
+.form input {
+    outline: none;
+}
+.authInputBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 181px;
+    width: 324px;
+}
+
 .authIconBox {
     position: relative;
 }
+.inputEmail {
+    width: 324px;
+    height: 44px;
+}
+
+.inputLoginWrapper input:first-child {
+    width: 324px;
+    height: 45px;
+}
+.form button:last-of-type {
+    width: 324px;
+    height: 48px;
+    padding: 12px 0px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -7,6 +7,7 @@
 .topHeaderCommonWrapper {
     height: 48px;
     width: 100%;
+    width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 .topHeaderWrapperBox {
@@ -47,13 +48,10 @@
     color: rgba(0, 0, 0, 1);
 }
 .languageSection {
-    height: 24px;
-    width: 78px;
-}
-.topHeaderTitleLanguageContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 859px;
+    align-self: center;
+    align-content: center;
     height: 24px;
+    width: 90px;
 }
