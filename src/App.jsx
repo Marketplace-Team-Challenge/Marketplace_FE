@@ -7,8 +7,11 @@ import { LoginComponent } from './components/UI/auth/components/LoginComponent';
 import { Account } from './pages/Account/Account';
 import { authLineTextLogin, authLineTextRegister, authTextLogin, authTextRegister, authTitleLogin, authTitleRegister } from './constants/Values';
 import { MainPage } from './pages/MainPage';
+import { useSelector } from 'react-redux';
+import { getUserInfo } from './store/auth/selectors';
 
 function App() {
+  const userInfo = useSelector(getUserInfo);
   return (
     <>
       <HeaderComponent />
@@ -18,7 +21,9 @@ function App() {
       authLineText={authLineTextRegister} authText={authTextRegister} childComponent={<RegistrationComponent />}/>} />
       <Route path="/login" element={<AuthComponent authTitle={authTitleLogin}
       authLineText={authLineTextLogin} authText={authTextLogin} childComponent={<LoginComponent />}/>} />
+      {userInfo.isAuth && (
       <Route path="/profile" element={<Account />} />
+      )}
       </Routes>
       {/* <FooterComponent /> */}
     </>

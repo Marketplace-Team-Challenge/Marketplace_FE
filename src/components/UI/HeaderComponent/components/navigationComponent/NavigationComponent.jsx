@@ -3,19 +3,24 @@ import { Link, useNavigate } from "react-router-dom";
 import css from "./NavigationComponent.module.css"
 import { ButtonMain } from "../../../common/ButtonComponent/ButtonMain";
 import { authTitleRegister, buttonNameLogin, buttonNameLogout, buttonTypeButton, navData } from "../../../../../constants/Values";
-import { useSelector } from "react-redux";
-import { getEmail, getIsAuth } from "../../../../../store/auth/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserInfo } from "../../../../../store/auth/selectors";
 import { busketIcon, 
     // userColorIcon, 
     wishListIcon } from "../../../../../constants/Icons";
 import { Avatar } from "@mui/material";
+import { logout } from "../../../../../store/auth/operations";
 
 export const NavigationComponent = () => {
+    const dispath =useDispatch();
     const navigate = useNavigate();
-    const isAuth = useSelector(getIsAuth);
-    const email = useSelector(getEmail);
+    // const isAuth = useSelector(getIsAuth);
+    const userInfo = useSelector(getUserInfo);
+    // const email = useSelector(userInfo.getEmail);
 
-    let firstLetterUsername = email.slice(0, 1).toUpperCase();
+    let firstLetterUsername = userInfo.email.slice(0, 1).toUpperCase();
+
+    // const userLogout = () => {dispath(logout());}
 
     return (
         <React.Fragment>
@@ -31,7 +36,7 @@ export const NavigationComponent = () => {
                     })
                 }
             </nav>
-            {!isAuth && (
+            {!userInfo.isAuth && (
             <div className={css.navigationBtnContainer}>
                 <div style={{width: "35px", height: "18px"}}>
                 <Link to="/login" className={css.navigationBtnLink}>{buttonNameLogin}</Link>
@@ -40,7 +45,7 @@ export const NavigationComponent = () => {
                 onClick={() => navigate("/registration")} />
             </div>
             )}
-            {isAuth && (
+            {userInfo.isAuth && (
                             <div className={css.personalBar}>
                             <div className={css.iconBox}>
                             <img src={wishListIcon} alt="Wish List" />
@@ -62,7 +67,9 @@ export const NavigationComponent = () => {
 							</Avatar>
                             {/* <img src={userColorIcon} alt="Profile" /> */}
                             </div>
-                            <ButtonMain type={buttonTypeButton} buttonName={buttonNameLogout} />
+                            <ButtonMain type={buttonTypeButton} buttonName={buttonNameLogout} 
+                            onClick={() => {dispath(logout()); navigate('/', { replace: true });}}
+                             />
                         </div>
 
             )}

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { login, registration } from "./operations";
+import { login, logout, registration} from "./operations";
 
 export const initialState = {
 	isAuth: false,
@@ -13,6 +13,8 @@ export const initialState = {
 	isError: false,
 	errorMessage: '',
 };
+
+
 
 const userSlice = createSlice({
 	name: 'user',
@@ -36,6 +38,16 @@ const userSlice = createSlice({
 				state.jwt_token = action.payload.jwt_token;
 			})
 			.addCase(login.rejected, (state, action) => {
+				state.isError = true;
+				state.errorMessage = action.payload;
+			})
+			.addCase(logout.fulfilled, () => {
+				localStorage.clear();
+				return {
+					...initialState,
+				};
+			})
+			.addCase(logout.rejected, (state, action) => {
 				state.isError = true;
 				state.errorMessage = action.payload;
 			})

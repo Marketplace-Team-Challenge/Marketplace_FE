@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseServerUrl } from "../../constants/Values";
 import axios from 'axios';
+import { loadFromLocalStorage } from "./services";
 
 export const registration = createAsyncThunk(
 	'user/register',
@@ -58,6 +59,28 @@ export const login = createAsyncThunk(
 			console.log(data);
 			localStorage.setItem('token', data.jwt_token);
 			return data;
+		} catch (error) {
+			return rejectWithValue(error.message);
+		}
+	}
+);
+
+export const logout = createAsyncThunk(
+	'user/logout',
+	async (_, { rejectWithValue }) => {
+		try {
+			let locAppState = `Bearer ${loadFromLocalStorage().user.jwt_token}`;
+			const response = await axios.delete(`${baseServerUrl}/api/users/me/logout`, {
+				headers: {
+					Authorization: locAppState,
+					'Content-Type': 'application/json',
+				},
+			});
+			if (response.status !== 200) {
+				throw new Error('There was a problem with your request');
+			}
+			const status = await response.status;
+			return status;
 		} catch (error) {
 			return rejectWithValue(error.message);
 		}

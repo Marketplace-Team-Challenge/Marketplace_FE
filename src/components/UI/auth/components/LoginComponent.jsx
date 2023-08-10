@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../../store/auth/operations';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
-import { getIsAuth } from '../../../../store/auth/selectors';
+import {  getUserInfo } from '../../../../store/auth/selectors';
 
 export const LoginComponent = () => {
 
@@ -23,7 +23,7 @@ export const LoginComponent = () => {
       const navigate = useNavigate();
       const email = useInput('olena@gmail.com', { isEmpty: true, isEmail: true });
       const password = useInput('123456', { isEmpty: true, minLength: 6 });
-      const isAuth = useSelector(getIsAuth);
+      const userInfo = useSelector(getUserInfo);
       let userToken = localStorage.getItem('token');
     
       const enterProfile = (email, password) => {
@@ -36,10 +36,10 @@ export const LoginComponent = () => {
       }
 
       useEffect(() => {
-        if (isAuth === true) {
+        if (userInfo.isAuth === true) {
           navigate('/profile');
         }
-      }, [isAuth, navigate]);
+      }, [userInfo.isAuth, navigate]);
 
       const isUserHasToken = useCallback(() => {
         try {
