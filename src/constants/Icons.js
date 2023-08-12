@@ -30,6 +30,8 @@ import busketIcon from '../assets/svg/busket.svg';
 import mainLogoIcon from '../assets/svg/mainLogo.svg';
 import hiddenEye from '../assets/svg/hiddenEye.svg';
 import showEye from '../assets/svg/showEye.svg';
+import checkMarkIcon from '../assets/svg/check_mark.svg';
+import errorInputIcon from '../assets/svg/errorInputIcon.svg';
 export {
     appleGreyIcon,
     appleBlackIcon,
@@ -62,5 +64,7 @@ export {
     busketIcon,
     mainLogoIcon,
     hiddenEye,
-    showEye
+    showEye,
+    checkMarkIcon,
+    errorInputIcon,
 }

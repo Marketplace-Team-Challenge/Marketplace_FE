@@ -6,15 +6,13 @@ export const initialState = {
 	firstName: '',
     lastName: '',
 	email: '',
-    country: '',
+    city: '',
     phone: 0,
 	jwt_token: '',
 	userPhoto: {},
 	isError: false,
 	errorMessage: '',
 };
-
-
 
 const userSlice = createSlice({
 	name: 'user',

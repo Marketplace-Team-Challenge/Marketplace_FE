@@ -8,7 +8,7 @@ export const getUserInfo = createSelector(
         token: user.jwt_token,
         firstName: user.firstName,
         lastName: user.lastName,
-        country: user.country,
+        city: user.city,
         phone: user.phone,
         userPhoto: user.userPhoto,
         isError: user.isError,

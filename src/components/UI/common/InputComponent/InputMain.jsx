@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './InputMain.module.css';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 export const InputMain = ({
     onChange,
@@ -16,17 +16,15 @@ export const InputMain = ({
     customClassNameIconPassword,
     childComponent,
     onClickPasswordIcon,
+    isValidInput,
+    inputIsDirty,
+    // isPasswordsMatch,
 }) => {
-    const inputFocusRef = useRef();
     const [isFocused, setIsFocused] = useState(false);
 
     const handleFocus = () => {
         setIsFocused(true);
       };
-    
-      // const handleBlur = () => {
-      //   setIsFocused(false);
-      // };
 
     return (
         <>
@@ -34,10 +32,9 @@ export const InputMain = ({
         {labelText && (<label htmlFor="text" className={css[customClassNameLabel]}>{labelText}</label>)}
         <input
         className={`${css[customClassNameInput]} 
-        ${
-            isFocused ? css.focus : ''
-        }`}
-        ref={inputFocusRef} 
+        ${isFocused && (css.focus)}
+        ${isFocused && (!isValidInput && inputIsDirty) && (css.error)}
+        `} 
         placeholder={placeholder} 
         type={type} 
         onChange={onChange}
@@ -45,15 +42,12 @@ export const InputMain = ({
         onBlur={onBlur}
         value={value}
         />
+        {isValidInput && (<span className={css.iconCheckMarkAuthStyle}></span>)}
+        {!isValidInput && inputIsDirty && (<span className={css.iconErrorInput}></span>)}
         {customClassNameIconEmail && (<span className={css[customClassNameIconEmail]}></span>)}
         {customClassNameIconPassword && (<span className={css[customClassNameIconPassword]} onClick={() => onClickPasswordIcon()}></span>)}
         {childComponent}
         </div>
-         {/* <input 
-         className={css.input}
-         placeholder={placeholder} 
-         type={type} onChange={onChange}
-         value={value} /> */}
         </>
     );
 }
@@ -73,5 +67,7 @@ InputMain.propTypes = {
     childComponent: PropTypes.element,
     customClassNameError: PropTypes.string,
     customClassNameIconPassword: PropTypes.string,
+    isValidInput: PropTypes.bool,
+    inputIsDirty: PropTypes.bool,
   };
 

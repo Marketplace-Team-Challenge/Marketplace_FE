@@ -32,13 +32,23 @@ export const authLineTextLogin = 'or log in with';
 
 export const buttonNameLogout = 'Log out';
 
-export const errorEmailRequired = 'Email should be required';
+export const errorEmailInputMessage = `Please enter the correct email`;
 
-export const errorEmailInvalid = 'Invalid email';
+export const errorPasswordInputMessage = `Please enter the correct password`;
 
-export const errorPasswordRequired = 'Password should be required';
+export const emailTextError = 'email';
 
-export const errorPasswordLength = 'Length must be at least 6 characters';
+export const passwordTextError = 'password';
+
+export const PasswordMatchError = 'Passwords must match';
+
+// export const errorEmailRequired = 'Email should be required';
+
+// export const errorEmailInvalid = 'Invalid email';
+
+// export const errorPasswordRequired = 'Password should be required';
+
+// export const errorPasswordInvalid = 'Invalid password';
 
 export const navData = [
     {

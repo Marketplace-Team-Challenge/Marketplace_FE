@@ -5,12 +5,7 @@ import PropTypes from 'prop-types';
 import { facebookColorIcon, googleColorIcon, appleBlackIcon, closeIcon } from "../../../constants/Icons";
 
 export const AuthComponent = ({authTitle, authText, authLineText, childComponent}) => {
-    //   const logInLinkStyle = {
-    //     textDecoration: 'underline',
-    //     fontWeight: '600',
-    //     lineHeight: '24px',
-    //   }
-      
+
     const navigate = useNavigate();
     return (
         <>

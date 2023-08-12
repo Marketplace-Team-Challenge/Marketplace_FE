@@ -79,7 +79,7 @@ export const logout = createAsyncThunk(
 			if (response.status !== 200) {
 				throw new Error('There was a problem with your request');
 			}
-			const status = await response.status;
+			const status = response.status;
 			return status;
 		} catch (error) {
 			return rejectWithValue(error.message);

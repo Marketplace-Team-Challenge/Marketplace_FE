@@ -50,20 +50,25 @@ export const useInput = (initialValue, validations) => {
 
 export const useValidation = (value, validations) => {
 	const [isEmpty, setEmpty] = useState(true);
-	const [minLengthError, setMinLengthError] = useState(false);
-	const [isEmail, setEmail] = useState(false);
+	const [isValidPassword, setErrorPassword] = useState(false);
+	const [isEmail, setEmailError] = useState(false);
 	const [isInputValid, setIsInputValid] = useState(false);
-
+	
 	useEffect(() => {
 		setEmpty(!value);
-		setMinLengthError(value.length < validations.minLength);
-		setEmail(!validations.isEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
-		setIsInputValid(!isEmpty && minLengthError && (!validations.isEmail));
-	}, [value, isEmpty, minLengthError, isEmail, validations]);
+		validations.password ? 
+			setErrorPassword(!validations.password || !/^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{8,15}$/.test(value))
+		:
+			setEmailError(!validations.isEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
+
+			setIsInputValid(!isEmpty && !isEmail && !isValidPassword);
+		}, [validations, value, isEmpty,
+			isValidPassword,
+			isEmail]);
 
 	return {
 		isEmpty,
-		minLengthError,
+		isValidPassword,
 		isEmail,
 		isInputValid,
 	};
