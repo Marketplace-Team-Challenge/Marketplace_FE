@@ -1,7 +1,9 @@
 import { useState } from "react";
 import css from "./PersonForm.module.css"
-import { ButtonMain } from "../../components/UI/common/ButtonComponent/ButtonMain";
-import { InputMain } from "../../components/UI/common/InputComponent/InputMain";
+// import { ButtonMain } from "../../components/UI/common/ButtonComponent/ButtonMain";
+import { InputMain } from "../../../components/UI/common/InputComponent/InputMain";
+import { ButtonMain } from "../../../components/UI/common/ButtonComponent/ButtonMain";
+// import { InputMain } from "../../components/UI/common/InputComponent/InputMain";
 
 
 const formData = [
@@ -18,24 +20,12 @@ const formData = [
     placeholder: "Enter your Last name"
   },
   {
-    label: "Country/region fo residence",
-    name: "residence",
+    label: "City",
+    name: "city",
     type: "text",
-    placeholder: "Enter your country of residence"
-  },
-    {
-    label: "Title",
-    name: "title",
-    type: "text",
-    placeholder: "Enter your title"
+    placeholder: "Enter your city"
   },
   {
-    label: "Country/region code",
-    name: "code",
-    type: "number",
-    placeholder: "Enter your region code"
-  },
-   {
     label: "Phone number",
     name: "phone",
     type: "tel",
@@ -48,8 +38,6 @@ const formData = [
     type: "date",
     placeholder: "Enter your birthday"
   },
-
- 
   {
     label: "Email",
     name: "email",
@@ -76,7 +64,7 @@ export const Form = () => {
           {formData.map((data, index) => {
                     return(      
                         <div className={css.form_group} key={index}>
-                        <label htmlFor={data.name}>{ data.label}</label>
+                        <label htmlFor={data.name}>{ data.label}<span className={css.form_sign}>*</span></label>
                         <InputMain
                           required
                           placeholder={data.placeholder}
@@ -90,7 +78,7 @@ export const Form = () => {
                     )
                 })}
         </div>
-        <ButtonMain type="submit">Save</ButtonMain>
+        <ButtonMain className={css.btn} type="submit" buttonName="Save"/>
       </form>
     )
 }

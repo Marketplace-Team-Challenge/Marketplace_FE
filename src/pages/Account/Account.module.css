@@ -22,13 +22,20 @@
 }
 .card_title{
     margin-bottom: 80px;
+    font-weight: 400;
+
 }
 .card_icon{
     margin-right: auto;
     margin-left: 24px;
+    cursor: pointer;
 }
 .card_info{
     margin-left: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--mainText_color);
 }
 .card_info:hover{
     color: var(--accent_color)
@@ -41,7 +48,7 @@
 .card_logo{
     width: 24px;
     height: auto;
-
+    fill: none;
 }
 .card_logo:hover{
     fill: var(--accent_color)

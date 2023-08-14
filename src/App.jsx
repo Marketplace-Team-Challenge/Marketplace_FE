@@ -9,6 +9,11 @@ import { authLineTextLogin, authLineTextRegister, authTextLogin, authTextRegiste
 import { MainPage } from './pages/MainPage';
 import { useSelector } from 'react-redux';
 import { getUserInfo } from './store/auth/selectors';
+import { PersonalInfo } from './pages/Account/Personal/PersonalInfo';
+import { Ads } from './pages/Account/Ads/Ads';
+import { Purchase } from './pages/Account/Purchase/Purchase';
+import { Favorites } from './pages/Account/Favorites/Favorites';
+
 
 function App() {
   const userInfo = useSelector(getUserInfo);
@@ -22,7 +27,12 @@ function App() {
       <Route path="/login" element={<AuthComponent authTitle={authTitleLogin}
       authLineText={authLineTextLogin} authText={authTextLogin} childComponent={<LoginComponent />}/>} />
       {userInfo.isAuth && (
-      <Route path="/profile" element={<Account />} />
+          <Route path="/profile" element={<Account />}>
+            <Route path="personal" element={<PersonalInfo />} />
+            <Route path="ads" element={<Ads />} />
+            <Route path="purchase" element={<Purchase />} />
+            <Route path="favorite" element={<Favorites/>} />
+          </Route>
       )}
       </Routes>
       {/* <FooterComponent /> */}

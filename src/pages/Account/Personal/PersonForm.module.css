@@ -9,11 +9,18 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.form_sign{
+    color: red;
+}
 
 .form button[type="submit"]{
     margin: 0;
     margin-left: auto;
     display: flex;
+    padding: 12px 40px;
+}
+.btn{
+    padding: 12px 40px;
 }
 .form_group {
     width: calc(50% - 12px);
