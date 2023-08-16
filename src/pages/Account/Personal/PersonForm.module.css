@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 128px;
 }
 .form_sign{
     color: red;
@@ -18,6 +19,7 @@
     margin-left: auto;
     display: flex;
     padding: 12px 40px;
+    margin-bottom: 24px;
 }
 .btn{
     padding: 12px 40px;

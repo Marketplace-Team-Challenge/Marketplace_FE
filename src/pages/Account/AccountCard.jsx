@@ -6,7 +6,8 @@ export const AccountCard = () => {
     const name = 'Anna Shevchenko';
     return (
         <div className={css.card_container}>
-            <img className={css.card_img} src={avatar}/>
+            <img className={css.card_img} src={avatar} />
+            <p className={css.card_imgChange}>change photo</p>
             <span className={css.card_title}>{name}</span> 
            <CardInfo/>
     </div>

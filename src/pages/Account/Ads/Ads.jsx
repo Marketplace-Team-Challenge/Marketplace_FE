@@ -1,8 +1,11 @@
-import css from '../Personal/PersonalInfo.module.css'
+// import { ButtonMain } from '../../../components/UI/common/ButtonComponent/ButtonMain'
+import css from './Add.module.css'
+import { NoAds } from './NoAds'
 export const Ads = () => {
     return (
         <div className={css.personal_container}>
-          <h2>Ads</h2>  
+        <NoAds /> 
+        
         </div>
         
     )

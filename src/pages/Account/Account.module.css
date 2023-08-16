@@ -18,17 +18,24 @@
 .card_img{
     width: 80px;
     height: 80px;
-    margin: 24px auto 12px auto;
+    margin: 24px auto 2px auto;
+}
+.card_imgChange{
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--text_btn_color);
+    margin-bottom: 6px;
 }
 .card_title{
-    margin-bottom: 80px;
+    margin-bottom: 32px;
     font-weight: 400;
 
 }
 .card_icon{
     margin-right: auto;
-    margin-left: 24px;
+    margin-left: 20px;
     cursor: pointer;
+    margin-bottom: 262px;
 }
 .card_info{
     margin-left: 16px;

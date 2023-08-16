@@ -53,11 +53,7 @@ export const Form = () => {
     localStorage.setItem('formData', JSON.stringify(formValues));
     setFormValues({});
   };
-  // const handleChange = (e) => {
-  //   console.log("handleChange called with:", e.target.name, e.target.value);
-  //   const { name, value } = e.target;
-  //   setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
-  // };
+
 const handleFieldChange = (fieldName, value) => {
   setFormValues((prevFormValues) => ({
     ...prevFormValues,
@@ -65,11 +61,6 @@ const handleFieldChange = (fieldName, value) => {
   }));
 };
 
-// const handleBlur = (e) => {
-//   console.log("handleBlur called with:", e.target.name, e.target.value);
-//   const { name, value } = e.target;
-//   setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
-// };
   const handleFieldBlur = (fieldName, value) => {
   setFormValues((prevFormValues) => ({
     ...prevFormValues,
@@ -92,9 +83,7 @@ const handleFieldChange = (fieldName, value) => {
                           id={data.name}
                           type={data.type} 
                           value={formValues[data.name] || ''}
-                          // onChange={handleChange}
                           onChange={(e) => handleFieldChange(data.name, e.target.value)}
-                          // onBlur={handleBlur} 
                           onBlur={() => handleFieldBlur(data.name, formValues[data.name])}
                           />
         </div>
