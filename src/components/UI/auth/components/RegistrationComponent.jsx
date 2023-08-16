@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { inputTypeText, authPlaceholderEmail, authPlaceholderPassword, buttonTypeSubmit, authTitleRegister, 
     authPlaceholderPasswordRepeat, inputStyles, PasswordMatchError, errorEmailInputMessage, errorPasswordInputMessage } from '../../../../constants/Values';
 import { useInput, useTogglePassword } from '../../../../customHooks/customHooks';
@@ -6,6 +6,9 @@ import { ButtonMain } from '../../common/ButtonComponent/ButtonMain';
 import { InputMain } from '../../common/InputComponent/InputMain';
 import css from './RegistrationComponent.module.css';
 import { registration } from '../../../../store/auth/operations';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getUserInfo } from '../../../../store/auth/selectors';
 
 export const RegistrationComponent = () => {
   const {inputAuth, iconEmailAuth, containerAuth} = inputStyles;
@@ -16,11 +19,20 @@ export const RegistrationComponent = () => {
   const password = useInput('', {isEmpty: true, password: true});
   const passwordRepeat = useInput('', {isEmpty: true, password: true})
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const userInfo = useSelector(getUserInfo);
   const isDisabledButton = !email.isInputValid || !password.isInputValid || !passwordRepeat.isInputValid;
   const isPasswordsMatch = passwordRepeat.isDirty && passwordRepeat.value !== password.value;
+
   const enterRegistration = (data) => {
     dispatch(registration(data));
   }
+
+  useEffect(() => {
+    if (userInfo.isAuth === true) {
+      navigate('/profile');
+    }
+  }, [userInfo.isAuth, navigate]);
 
     return(
         <>
@@ -29,8 +41,7 @@ export const RegistrationComponent = () => {
             const credentials = {
                 email: email.value,
                 password: password.value,
-                username: 'kate',
-                role: 'DRIVER',
+                repeatPassword: passwordRepeat.value,
             };
             console.log(credentials);
                 enterRegistration(credentials);

@@ -9,22 +9,19 @@ import { busketIcon,
     // userColorIcon, 
     wishListIcon } from "../../../../../constants/Icons";
 import { Avatar } from "@mui/material";
-import { logout } from "../../../../../store/auth/operations";
+import { logoutUser } from "../../../../../store/auth/slice";
 
 export const NavigationComponent = () => {
     const dispath =useDispatch();
     const navigate = useNavigate();
-    // const isAuth = useSelector(getIsAuth);
     const userInfo = useSelector(getUserInfo);
-    // const email = useSelector(userInfo.getEmail);
-
+    const containerNavClasses = `${css.navigationCommonContainer} ${userInfo.isAuth ? css.registered : css.notRegistered}`;
     let firstLetterUsername = userInfo.email.slice(0, 1).toUpperCase();
-
-    // const userLogout = () => {dispath(logout());}
 
     return (
         <React.Fragment>
-            <div className={css.navigationCommonContainer}>
+            <div className={containerNavClasses}
+            >
             <nav className={css.navigation}>
                 {
                     navData.map((nav) => {
@@ -38,7 +35,7 @@ export const NavigationComponent = () => {
             </nav>
             {!userInfo.isAuth && (
             <div className={css.navigationBtnContainer}>
-                <div style={{width: "35px", height: "18px"}}>
+                <div className={css.navigationLinkContainer}>
                 <Link to="/login" className={css.navigationBtnLink}>{buttonNameLogin}</Link>
                 </div>
                 <ButtonMain type={buttonTypeButton} buttonName={authTitleRegister}
@@ -68,7 +65,7 @@ export const NavigationComponent = () => {
                             {/* <img src={userColorIcon} alt="Profile" /> */}
                             </div>
                             <ButtonMain type={buttonTypeButton} buttonName={buttonNameLogout} 
-                            onClick={() => {dispath(logout()); navigate('/', { replace: true });}}
+                            onClick={() => {dispath(logoutUser()); navigate('/', { replace: true });}}
                              />
                         </div>
 

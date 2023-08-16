@@ -57,7 +57,7 @@ export const useValidation = (value, validations) => {
 	useEffect(() => {
 		setEmpty(!value);
 		validations.password ? 
-			setErrorPassword(!validations.password || !/^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{8,15}$/.test(value))
+			setErrorPassword(!validations.password || !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,15}$/.test(value))
 		:
 			setEmailError(!validations.isEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value));
 

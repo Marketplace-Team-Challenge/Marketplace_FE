@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { baseServerUrl } from "../../constants/Values";
 import axios from 'axios';
-import { loadFromLocalStorage } from "./services";
 
 export const registration = createAsyncThunk(
 	'user/register',
@@ -11,7 +10,7 @@ export const registration = createAsyncThunk(
 	) => {
 		try {
 			const response = await axios.post(
-				`${baseServerUrl}/api/auth/register`,
+				`${baseServerUrl}/auth/registration`,
 				credentials,
 				{
 					headers: {
@@ -19,9 +18,8 @@ export const registration = createAsyncThunk(
 					},
 				}
 			);
-			console.log(response);
             const status = response.status;
-			if (response.status === 200) {
+			if (response.status === 201) {
 				return fulfillWithValue(status);
 			} else if (response.status === 400) {
 				const errorStatus = response.status;
@@ -47,7 +45,7 @@ export const login = createAsyncThunk(
 	'user/login',
 	async (userCredentials, { rejectWithValue }) => {
 		try {
-			const response = await axios.post(`${baseServerUrl}/api/auth/login`, userCredentials, {
+			const response = await axios.post(`${baseServerUrl}/auth/authentication`, userCredentials, {
 				headers: {
 					'Content-Type': 'application/json',
 				},
@@ -55,9 +53,9 @@ export const login = createAsyncThunk(
 			if (response.status !== 200) {
 				throw new Error('There was a problem with your request');
 			}
-			const data = await response.data.user;
-			console.log(data);
-			localStorage.setItem('token', data.jwt_token);
+			const data = await response.data;
+			const token = response.data.token;
+			document.cookie = `jwtToken=${token}; HttpOnly; SameSite=Strict;`;
 			return data;
 		} catch (error) {
 			return rejectWithValue(error.message);
@@ -65,24 +63,3 @@ export const login = createAsyncThunk(
 	}
 );
 
-export const logout = createAsyncThunk(
-	'user/logout',
-	async (_, { rejectWithValue }) => {
-		try {
-			let locAppState = `Bearer ${loadFromLocalStorage().user.jwt_token}`;
-			const response = await axios.delete(`${baseServerUrl}/api/users/me/logout`, {
-				headers: {
-					Authorization: locAppState,
-					'Content-Type': 'application/json',
-				},
-			});
-			if (response.status !== 200) {
-				throw new Error('There was a problem with your request');
-			}
-			const status = response.status;
-			return status;
-		} catch (error) {
-			return rejectWithValue(error.message);
-		}
-	}
-);

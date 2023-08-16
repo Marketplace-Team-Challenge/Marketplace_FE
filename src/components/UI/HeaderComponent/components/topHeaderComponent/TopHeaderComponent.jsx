@@ -21,9 +21,9 @@ export const TopHeaderComponent = () => {
                 <div className={css.topHeaderWrapperBox}>
             <div className={css.topHeaderTitleBox}>
         <LogoComponent />
-        
+        <div className={css.topHeaderTitleWrapper}>
         <div className={css.topHeaderTitleContainer}>
-            <h4 className={css.topHeaderTitle}>{topHeaderTitle}</h4>
+            <div className={css.topHeaderTitle}>{topHeaderTitle}</div>
             <div className={css.topHeaderLinkContainer}>
             <Link className={css.topHeaderLink} to="/">
             {topHeaderlinkTitle}
@@ -81,6 +81,8 @@ export const TopHeaderComponent = () => {
         </div>
         </div>
         </div>
+        </div>
         </React.Fragment>
+        
     );
 }

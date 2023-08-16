@@ -78,7 +78,7 @@ export const navData = [
     }
 ];
 
-export const baseServerUrl = 'https://delivery-app-back-43wjgjaw5a-ey.a.run.app';
+export const baseServerUrl = 'https://marketplace-be.fly.dev/api/v1';
 
 export const inputStyles = {
     inputAuth: 'inputAuthStyle',

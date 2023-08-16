@@ -8,7 +8,6 @@ import css from './LoginComponent.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../../../store/auth/operations';
 import { useEffect } from 'react';
-import { useCallback } from 'react';
 import { getUserInfo } from '../../../../store/auth/selectors';
 
 export const LoginComponent = () => {
@@ -17,10 +16,9 @@ export const LoginComponent = () => {
       const {inputAuth, iconEmailAuth, containerAuth} = inputStyles;
       const dispatch = useDispatch();
       const navigate = useNavigate();
-      const email = useInput('kate@gmail.com', { isEmpty: true, isEmail: true });
-      const password = useInput('kK111111', { isEmpty: true, password: true });
+      const email = useInput('john@gmail.com', { isEmpty: true, isEmail: true });
+      const password = useInput('123456jJ', { isEmpty: true, password: true });
       const userInfo = useSelector(getUserInfo);
-      let userToken = localStorage.getItem('token');
       const isDisabledButton = !email.isInputValid || !password.isInputValid;
     
       const enterProfile = (email, password) => {
@@ -37,20 +35,6 @@ export const LoginComponent = () => {
           navigate('/profile');
         }
       }, [userInfo.isAuth, navigate]);
-
-      const isUserHasToken = useCallback(() => {
-        try {
-          if (userToken) {
-            navigate('/profile');
-          } 
-        } catch (e) {
-          console.log(e);
-        }
-      }, [userToken, navigate]);
-    
-      useEffect(() => {
-        isUserHasToken();
-      }, [isUserHasToken]);
 
     return(
         <>
