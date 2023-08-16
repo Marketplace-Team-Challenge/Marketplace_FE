@@ -47,7 +47,7 @@
     background-size: cover;
 }
 .containerAuth, .containerProfile {
-    width: 324px;
+    width: 100%;
 }
 .containerAuth {
     position: relative;
