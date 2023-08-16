@@ -53,26 +53,49 @@ export const Form = () => {
     localStorage.setItem('formData', JSON.stringify(formValues));
     setFormValues({});
   };
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
-  };
+  // const handleChange = (e) => {
+  //   console.log("handleChange called with:", e.target.name, e.target.value);
+  //   const { name, value } = e.target;
+  //   setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
+  // };
+const handleFieldChange = (fieldName, value) => {
+  setFormValues((prevFormValues) => ({
+    ...prevFormValues,
+    [fieldName]: value,
+  }));
+};
 
+// const handleBlur = (e) => {
+//   console.log("handleBlur called with:", e.target.name, e.target.value);
+//   const { name, value } = e.target;
+//   setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
+// };
+  const handleFieldBlur = (fieldName, value) => {
+  setFormValues((prevFormValues) => ({
+    ...prevFormValues,
+    [fieldName]: value,
+  }));
+};
+
+  console.log(formValues);
     return (
       <form className={css.form} onSubmit={handleSubmit}>
         <div className={css.form_wrapper}>
           {formData.map((data, index) => {
                     return(      
                         <div className={css.form_group} key={index}>
-                        <label htmlFor={data.name}>{ data.label}<span className={css.form_sign}>*</span></label>
+                        <label htmlFor={data.name}>{data.label}<span className={css.form_sign}>*</span></label>
                         <InputMain
                           required
                           placeholder={data.placeholder}
-                          name={data.name}
+                          name={data.name} 
                           id={data.name}
                           type={data.type} 
                           value={formValues[data.name] || ''}
-                          onChange={handleChange}
+                          // onChange={handleChange}
+                          onChange={(e) => handleFieldChange(data.name, e.target.value)}
+                          // onBlur={handleBlur} 
+                          onBlur={() => handleFieldBlur(data.name, formValues[data.name])}
                           />
         </div>
                     )
