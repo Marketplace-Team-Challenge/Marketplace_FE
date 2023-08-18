@@ -1,7 +1,7 @@
 .personal_container{
     background-color: var(--main_bg);
         width: 823px;
-        height: 100%;
+        min-height: 588px;
         border-radius: 16px;
         box-shadow: 0 4px 12px 0 rgba(141, 175, 185, 24%);
         padding: 24px;
