@@ -1,6 +1,6 @@
 .personal_container {
     background-color: var(--main_bg);
-    width: 823px;
+    width: 748px;
     min-height: 588px;
     border-radius: 16px;
     box-shadow: 0 4px 12px 0 rgba(141, 175, 185, 24%);
@@ -9,37 +9,68 @@
 .card_container{
     /* padding: 24px; */
     box-sizing: border-box;
+    
 }
 .card_list{
     display: flex;
-    gap: 33px;
+    width: 100%;
     min-height: 154px;
     margin-bottom: 10px;
     border-radius: 20px;
-    outline: 1px solid red;
+    
     box-shadow: 0px 24px 32px 0px rgba(50, 50, 71, 0.08);
 }
 .card_img{
     width: 194px;
-    height: 100%;
     object-fit:fill;
-
+    margin-right: 30px;
     box-shadow: 0px 16px 16px 0px rgba(50, 50, 71, 0.08);
 }
 .card_section{
     display: flex;
     flex-direction: column;
     margin-top: 17px;
-    margin-bottom: 39px;
+    width: 100%;
+    /* margin-bottom: 39px; */
+}
+.card_section button{
+    background-color: var(--star_bg);
+    padding: 4px 27px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.9;
+    border-radius: 20px;
+    gap: 8px;
+}
+.card_section button:hover{
+background-color: var(--second_btn);
 }
 .card_section:last-child{
     text-align: center;
+    border-left: 1px solid var(--line_bg);
+    padding: 10px;
+   max-width: 125px;
+    min-height: 122px;
+    margin-left: 23px;
+    margin-bottom: 16px;
+    /* outline: 1px solid red; */
 }
 .card_title{
     font-weight: 600;
     font-size: 17px;
     line-height: 1.5;
     margin-bottom: 24px;
+    position: relative;
+}
+.card_title::before{
+    content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--line_bg);
+    
 }
 .card_text{
     font-weight: 400;
@@ -47,4 +78,18 @@
     line-height: 1.5;
     font-style: italic;
     max-width: 328px;
+}
+.card_subtext{
+    margin-bottom: 8px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 2;
+}
+.card_price{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.card_currency{
+    margin-bottom: 6px;
 }

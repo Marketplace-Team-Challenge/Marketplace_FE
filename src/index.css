@@ -20,6 +20,7 @@
   --main_bg: #FFFFFF;
    --accent_color: #00A6DB;
    --star_bg: #FFAD33;
+   --second_btn: rgba(224, 136, 3, 1);
    --second_accent: #DB4444;
   --secondary_color: #FAFAFA;
   --thirdText_color: #808080;
@@ -35,6 +36,7 @@
 --button_color: #FFFFFF;
 --text_btn_color: rgba(47, 50, 51, 1);
 --button_active_bg: rgba(0, 132, 173, 1);
+--line_bg: rgba(122, 194, 255, 1);
 
 
 
