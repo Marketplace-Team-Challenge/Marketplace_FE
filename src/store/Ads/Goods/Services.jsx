@@ -1,4 +1,4 @@
-import { createArticle, deleteArticle, fetchGoods, updateArticle } from "../Api.jsx"
+import { createArticle, deleteArticle, fetchGoods, updateArticle } from "./Api.jsx"
 
 //масив з асинхронними функціями
 const arrThunk = [createArticle, deleteArticle, fetchGoods, updateArticle];
