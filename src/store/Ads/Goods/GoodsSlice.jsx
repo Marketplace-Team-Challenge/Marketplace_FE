@@ -8,17 +8,21 @@ const initialState = {
     activeCategory: null,
     error: null
 }
-
+//структура та логіка для управління станом товарів в сторі: для обробки асинхронних операцій отримання, створення, оновлення та видалення товарів.
 export const goodsSlice = createSlice({
     name: 'goods',
     initialState,
 
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchGoods.fulfilled, handleFulfilledGet)
+      builder
+        //успішне завершення запиту отримання(створення, оновлення, видалення) товарів, викликається функція handleFulfilled....., яка оновлює стан з отриманими товарами.
+    .addCase(fetchGoods.fulfilled, handleFulfilledGet)
+    
       .addCase(createArticle.fulfilled, handleFulfilledCreate)
         .addCase(deleteArticle.fulfilled, handleFulfilledDelete)
-        .addCase(updateArticle.fulfilled, handleFulfilledGet)
+          .addCase(updateArticle.fulfilled, handleFulfilledGet)
+          
+          //відповідає за обробку різних типів "fulfilled (pending, rejected)" подій, використовує handleFulfilled функцію, яка оновлює загальний стан для них.
       .addMatcher(isAnyOf(
         ...thunkFunction('fulfilled')
       ), handleFulfilled
